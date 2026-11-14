@@ -21,9 +21,3 @@ inline void HexCell::SetPlayer(int player) { this->player = player; }
 bool HexCell::operator==(const HexCell &rhs) {
   return row == rhs.row && col == rhs.col;
 }
-
-std::size_t HexCell::Hasher::operator()(const HexCell &cell) {
-  std::size_t hx = std::hash<int>{}(cell.GetRow());
-  std::size_t hy = std::hash<int>{}(cell.GetCol());
-  return hx ^ (hy << 1);
-}

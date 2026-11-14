@@ -11,24 +11,29 @@ private:
 
 public:
   // Constructors
-  HexCell() = delete;
   HexCell(int row, int col, int player = 0);
   HexCell(const HexCell &other);
   const HexCell &operator=(const HexCell &rhs);
 
   // Getters & Setters
-  inline int GetRow() const;
-  inline int GetCol() const;
-  inline int GetPlayer() const;
+  int GetRow() const;
+  int GetCol() const;
+  int GetPlayer() const;
 
-  inline void SetPlayer(int player);
+  void SetPlayer(int player);
 
   // Equality and Hashing
   bool operator==(const HexCell &rhs);
-
-  struct Hasher {
-    std::size_t operator()(const HexCell &cell);
-  };
 };
+
+namespace std {
+template <> struct hash<HexCell> {
+  size_t operator()(const HexCell &cell) const {
+    size_t hr = hash<int>{}(cell.GetRow());
+    size_t hc = hash<int>{}(cell.GetCol());
+    return hr ^ (hc << 1);
+  }
+};
+} // namespace std
 
 #endif
