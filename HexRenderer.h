@@ -18,4 +18,3 @@ class HexRenderer {
 }
 
 #endif
-
