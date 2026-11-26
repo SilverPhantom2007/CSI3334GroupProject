@@ -7,8 +7,11 @@ int HexBoard::GetSize() const { return size; }
 bool HexBoard::AddCell(int row, int col, int player) {
   bool added = false;
   HexCell newCell(row, col, player);
-  if (board.find(newCell) == nullptr)
+  if (board.find(newCell) == board.end()) { // newCell isn't found
+    // https://en.cppreference.com/cpp/container/unordered_set/find
+    // https://en.cppreference.com/cpp/container/unordered_set/end
     added = board.insert(newCell).second;
+  }
   return added;
 }
 
