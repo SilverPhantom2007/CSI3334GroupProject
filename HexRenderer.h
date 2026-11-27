@@ -1,5 +1,6 @@
 #ifndef HEX_RENDERER_H_
 #define HEX_RENDERER_H_
+#include "SDL_Plotter.h"
 
 
 class HexRenderer {
@@ -11,10 +12,11 @@ class HexRenderer {
     void DrawRect(const SDL_Plotter& plotter, int x, int y, int width, int height, Color fillColor);
     void DrawHex(const SDL_Plotter& plotter, int x, int y, int radius, Color fillColor);
     void DrawBoard(const SDL_Plotter& plotter, int x, int y, int size);
-    void DrawText(const SDL_Plotter& plotter, string text, int x, int y, int size, Color fillColor);
+    void DrawText(const SDL_Plotter& plotter, std::string text, int x, int y,
+        int size, Color fillColor);
 
     // will update soon! -RP
 
-}
+};
 
 #endif

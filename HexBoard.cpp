@@ -17,8 +17,9 @@ bool HexBoard::AddCell(int row, int col, int player) {
 
 bool HexBoard::CheckPlayerWin(int player) const {
   std::unordered_set<HexCell> visitedCells;
+  return false;
 }
 
 bool HexBoard::CheckPlayerWinRecursive(
     int player, const HexCell &cell,
-    std::unordered_set<HexCell> &visitedCells) {}
+    std::unordered_set<HexCell> &visitedCells) {return false;}
