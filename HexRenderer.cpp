@@ -1,6 +1,5 @@
 #include "HexRenderer.h"
 #include <string>
-
 #include <cmath>
 
     void HexRenderer::DrawRect(const SDL_Plotter& plotter, int x, int y, int width, int height, Color fillColor) {
