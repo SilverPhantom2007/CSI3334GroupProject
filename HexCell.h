@@ -23,17 +23,17 @@ public:
   void SetPlayer(int player);
 
   // Equality and Hashing
-  bool operator==(const HexCell &rhs);
+  bool operator==(const HexCell &rhs) const;
 };
 
 namespace std {
-template <> struct hash<HexCell> {
-  size_t operator()(const HexCell &cell) const {
-    size_t hr = hash<int>{}(cell.GetRow());
-    size_t hc = hash<int>{}(cell.GetCol());
-    return hr ^ (hc << 1);
-  }
-};
-} // namespace std
+  template <> struct hash<HexCell> {
+    size_t operator()(const HexCell &cell) const {
+      //size_t hr = hash<int>{}(cell.GetRow());
+      //size_t hc = hash<int>{}(cell.GetCol());
+      return 0;//hr ^ (hc << 1);
+    }
+  };
+}// namespace std
 
 #endif

@@ -18,6 +18,6 @@ inline int HexCell::GetPlayer() const { return player; }
 
 inline void HexCell::SetPlayer(int player) { this->player = player; }
 
-bool HexCell::operator==(const HexCell &rhs) {
+bool HexCell::operator==(const HexCell &rhs) const{
   return row == rhs.row && col == rhs.col;
 }

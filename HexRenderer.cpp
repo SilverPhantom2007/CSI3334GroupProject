@@ -1,4 +1,6 @@
 #include "HexRenderer.h"
+#include <string>
+
 #include <cmath>
 
     void HexRenderer::DrawRect(const SDL_Plotter& plotter, int x, int y, int width, int height, Color fillColor) {
@@ -12,7 +14,7 @@
                 plotter.plotPixel(i,j,fillColor);
             }
         }
-        plotter.update(); // not sure if this is necessary
+        //plotter.update(); // not sure if this is necessary
     }
 
 
@@ -80,7 +82,8 @@
     }
 
 
-    void HexRenderer::DrawText(const SDL_Plotter& plotter, string text, int x, int y, int size, Color fillColor) {
+    void HexRenderer::DrawText(const SDL_Plotter& plotter, std::string text,
+        int x, int y, int size, Color fillColor) {
 
     }
 
